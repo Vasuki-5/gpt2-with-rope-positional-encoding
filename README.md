@@ -30,3 +30,14 @@ Rotary embeddings preserve **relative positions** between tokens and allow bette
 
 ---
 
+## 📊 Dataset (SST-2)
+
+SST-2 (Stanford Sentiment Treebank v2) is a popular benchmark dataset used for sentiment classification. It contains short movie reviews labeled as either **positive** or **negative**.
+
+In this project, only a **small subset of the SST-2 dataset** was used for experimentation, not the full training dataset. The CSV file used here has two columns:
+- `review` → the movie review text
+- `sentiment` → either "positive" or "negative"
+
+This limited dataset was only used for few-shot inference prompts and not for full training or fine-tuning.
+
+---
