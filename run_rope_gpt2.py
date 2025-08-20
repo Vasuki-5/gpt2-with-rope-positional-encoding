@@ -55,29 +55,14 @@ with torch.no_grad():
         pad_token_id=tokenizer.eos_token_id
     )
 
-# # Decode predicted sentiment
-# generated_tokens = outputs[0][input_ids.shape[-1]:]
-# generated_text = tokenizer.decode(generated_tokens, skip_special_tokens=True).strip().lower()
-# predicted_sentiment = "positive" if "positive" in generated_text else "negative" if "negative" in generated_text else "uncertain"
-#
-# # Show results
-# print("==== FEW-SHOT PROMPT ====")
-# print(few_shot_text)
-# print("\n==== PREDICTED SENTIMENT ====")
-# print(predicted_sentiment)
-#Decode predicted sentiment
+# Decode predicted sentiment
 generated_tokens = outputs[0][input_ids.shape[-1]:]
 generated_text = tokenizer.decode(generated_tokens, skip_special_tokens=True).strip().lower()
-
-# If the prediction is uncertain, fall back to the actual sentiment from the test example
 predicted_sentiment = "positive" if "positive" in generated_text else "negative" if "negative" in generated_text else "uncertain"
 
-# If the model is uncertain, use the original sentiment
-if predicted_sentiment == "uncertain":
-    predicted_sentiment = test_example["sentiment"]
-#
 # Show results
 print("==== FEW-SHOT PROMPT ====")
 print(few_shot_text)
 print("\n==== PREDICTED SENTIMENT ====")
 print(predicted_sentiment)
+
