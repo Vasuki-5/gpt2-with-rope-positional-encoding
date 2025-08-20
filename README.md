@@ -21,13 +21,11 @@ Rotary embeddings preserve **relative positions** between tokens and allow bette
 ---
 
 ## 📁 Files in this Repository
-```
 - `modeling_gpt2.py` → Modified GPT-2 model with RoPE integrated into its attention mechanism.
 - `rope.py` → Contains the `apply_rope` function used to inject rotary embeddings.
 - `run_rope_gpt2.py` → Loads the dataset, builds a few-shot prompt, runs inference using the RoPE-enhanced GPT-2 model.
 - `sst2_dataset.csv` → The dataset used for sentiment classification (CSV file with `review` and `sentiment` columns).
 - `requirements.txt` → Dependencies for this project.
-```
 ---
 
 ## 📊 Dataset (SST-2)
